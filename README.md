@@ -6,7 +6,9 @@
 
 ## まず使う
 
-[3ステップのはじめ方](docs/quickstart.md)を開き、練習用の文をコピーしてChatGPTへ貼り付けます。指示文・架空の予定・回答の確認方法を一つのページにまとめています。初回にProjectsやskillsを設定する必要はありません。
+**[Webガイド「はじめてのAI秘書」を開く](https://ai-secretary-kit-amu815.easytoast2050.chatgpt.site)** → 練習用の文をボタンでコピー → ChatGPTへ貼り付けます。GitHubの登録や操作は不要です。場面別の文と、送信前チェックもそのまま使えます。
+
+文章で読みたい方は、[3ステップのはじめ方](docs/quickstart.md)からも練習できます。指示文・架空の予定・回答の確認方法を一つのページにまとめています。初回にProjectsやskillsを設定する必要はありません。
 
 普段の予定に使い始めたら、[毎日の使い方](docs/daily-workflow.md)を参照してください。教材をダウンロードして改良したい方は **Code → Download ZIP** で一括保存できます。
 
@@ -27,7 +29,7 @@
 
 | 方法 | 向いている人 | 手順 |
 | --- | --- | --- |
-| ChatGPTにコピー＆ペースト | 最初に試したい人 | [クイックスタート](docs/quickstart.md) |
+| ChatGPTにコピー＆ペースト | 最初に試したい人 | [Webガイド](https://ai-secretary-kit-amu815.easytoast2050.chatgpt.site)・[文章の手順](docs/quickstart.md) |
 | Codexなどにskillsを追加 | 手順を繰り返し呼び出したい人 | [skillsの導入](docs/install-skills.md) |
 | ローカルの送信前確認ツール | コマンド操作ができる人 | [review gate](docs/review-gate.md) |
 
