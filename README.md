@@ -6,12 +6,9 @@
 
 ## まず使う
 
-1. [はじめ方](docs/quickstart.md)でChatGPTの利用環境を確認する。
-2. [AI秘書への共通指示](prompts/secretary-instructions.md)をコピーする。
-3. [架空の練習例](examples/first-day.md)を入力し、回答を元の依頼と照合する。
-4. [毎日の使い方](docs/daily-workflow.md)に沿って、自分に合う運用にする。
+[3ステップのはじめ方](docs/quickstart.md)を開き、練習用の文をコピーしてChatGPTへ貼り付けます。指示文・架空の予定・回答の確認方法を一つのページにまとめています。初回にProjectsやskillsを設定する必要はありません。
 
-GitHubを使い慣れていない方は、上のリンクを開いて本文をコピーしてください。一括保存する場合は、このページの **Code → Download ZIP** を選びます。
+普段の予定に使い始めたら、[毎日の使い方](docs/daily-workflow.md)を参照してください。教材をダウンロードして改良したい方は **Code → Download ZIP** で一括保存できます。
 
 ## 何を助けるか
 
@@ -34,7 +31,7 @@ GitHubを使い慣れていない方は、上のリンクを開いて本文を�
 | Codexなどにskillsを追加 | 手順を繰り返し呼び出したい人 | [skillsの導入](docs/install-skills.md) |
 | ローカルの送信前確認ツール | コマンド操作ができる人 | [review gate](docs/review-gate.md) |
 
-ChatGPT Plusを使った導入を基本にしています。課金前に[現行の料金と利用条件](https://learn.chatgpt.com/docs/pricing)を確認してください。APIキーはこのキットに不要です。
+最初の練習は、利用できるChatGPT環境から試せます。継続利用ではChatGPT Plusを導入候補にします。課金前に[現行の料金と利用条件](https://learn.chatgpt.com/docs/pricing)を確認してください。APIキーはこのキットに不要です。
 
 ## 内容
 
@@ -44,6 +41,7 @@ ChatGPT Plusを使った導入を基本にしています。課金前に[現行�
 - [架空の練習データ](examples/)・[動作評価用シナリオ](evals/scenarios.md)。
 - [Qiita記事草稿](articles/qiita-draft.md): 初版草稿。Qiitaには未投稿。
 - [出典と確認日](docs/sources.md)・[開発と検証](CONTRIBUTING.md)。
+- [Webガイドの更新方法](docs/website-maintenance.md): 開発者向け。
 
 ## 実際に防げること・人が確認すること
 
