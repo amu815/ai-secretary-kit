@@ -46,7 +46,7 @@
     reply: document.getElementById('reply-prompt'),
   };
   const taskDescriptions = {
-    daily: { title: '今日の順番を決める', description: '文をそのまま送ると、AIが用事の渡し方から案内します。一覧があればまとめて、なければ思い出せる1件から始められます。', next: 'まずは何も書き加えずに送信。そのあと、AIの案内に合わせて予定表やメモを渡します。' },
+    daily: { title: '今日の順番を決める', description: '用事の一覧や思い出せる1件を渡すと、まず今日の優先順位表を作ります。固定のIDを使い、同じ会話で完了のチェックを増やしていきます。', next: '文をそのまま送信 → 用事を渡す → 表の「今の一件」を進める → 同じ会話へ「Aが終わった」。' },
     email: { title: 'メールの用件を拾う', description: '文をそのまま送ると、どのメールをどう渡すか、AIが一つずつ案内します。依頼・質問・締切を取り出して、原文と見比べます。', next: 'そのあと、確認したいメールを1件コピーするか、必要な部分の画像をChatGPTへ渡します。' },
     writing: { title: '伝わる文章に整える', description: '文をそのまま送ると、直したい文章や相手との関係を、AIが一つずつ聞きます。最初から説明を全部そろえる必要はありません。', next: '下書きがあれば、AIに聞かれたときに貼り付けます。まだ書けていなければ、そのまま伝えてください。' },
     handoff: { title: '不在前に引き継ぐ', description: '文をそのまま送ると、不在の日や残っている用事を、AIが一つずつ聞きます。担当が決まっていなくても始められます。', next: 'やりかけの仕事の一覧やメモがあれば渡します。ない場合は、思い出せる1件を短い言葉で伝えます。' },
@@ -158,10 +158,43 @@
       : '確認できない項目があれば、下書きに戻しましょう。';
   }));
 
+  // This fictional interaction stays on this page. No task data is stored
+  // or sent to ChatGPT, and completed rows keep their original fixed IDs.
+  const demoChecks = Array.from(document.querySelectorAll('input[name="demo-task"]'));
+  const demoReset = document.getElementById('demo-reset');
+  function updateDemo() {
+    const done = demoChecks.filter(check => check.checked).length;
+    document.getElementById('demo-count').textContent = `${done} / ${demoChecks.length}`;
+    const progress = document.getElementById('demo-progress');
+    progress.value = done;
+    progress.textContent = `${done} / ${demoChecks.length}`;
+    demoChecks.forEach(check => {
+      const row = check.closest('[data-demo-row]');
+      row.classList.toggle('is-complete', check.checked);
+      row.querySelector('[data-demo-state]').textContent = check.checked ? '完了' : '未完了';
+    });
+    const next = demoChecks.find(check => !check.checked);
+    document.getElementById('demo-summary').textContent = next
+      ? `${done} / ${demoChecks.length}件完了。見本の次の一件：${next.value}「${next.dataset.taskName}」。`
+      : `${done} / ${demoChecks.length}件完了。見本の3件が終わりました。完了した行も、表に残っています。`;
+  }
+  function resetDemo() {
+    demoChecks.forEach(check => { check.checked = false; });
+    updateDemo();
+  }
+  demoChecks.forEach(check => {
+    check.disabled = false;
+    check.addEventListener('change', updateDemo);
+  });
+  demoReset.disabled = false;
+  demoReset.addEventListener('click', resetDemo);
+  window.addEventListener('pageshow', resetDemo);
+  resetDemo();
+
   async function loadPrompts() {
     const loadStatus = document.getElementById('load-status');
     try {
-      const response = await fetch('./prompts.json');
+      const response = await fetch('./prompts.json?v=20261022-board');
       if (!response.ok) throw new Error('Prompt request failed');
       const data = await response.json();
       if (typeof data.onboarding !== 'string' || !data.onboarding.trim()
@@ -169,7 +202,7 @@
         || typeof data.correction !== 'string' || !data.correction.trim()
         || !Array.isArray(data.tasks)
         || !Array.isArray(data.starterReplies)
-        || !['help', 'unsure', 'done'].every(id => data.starterReplies.some(reply => reply.id === id
+        || !['help', 'unsure', 'done', 'board'].every(id => data.starterReplies.some(reply => reply.id === id
           && typeof reply.label === 'string' && reply.label.trim()
           && typeof reply.text === 'string' && reply.text.trim()))
         || !Object.keys(taskDescriptions).every(id => data.tasks.some(task => task.id === id && typeof task.prompt === 'string' && task.prompt.trim()))) {
