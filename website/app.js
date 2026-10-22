@@ -194,7 +194,7 @@
   async function loadPrompts() {
     const loadStatus = document.getElementById('load-status');
     try {
-      const response = await fetch('./prompts.json?v=20261022-model');
+      const response = await fetch('./prompts.json?v=20261022-profile');
       if (!response.ok) throw new Error('Prompt request failed');
       const data = await response.json();
       if (typeof data.onboarding !== 'string' || !data.onboarding.trim()
