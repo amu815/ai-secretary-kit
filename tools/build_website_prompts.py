@@ -21,7 +21,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="教材のMarkdownからWeb用JSONを生成")
     parser.add_argument("--output", type=Path, default=ROOT / "website" / "prompts.json")
     args = parser.parse_args()
-    instructions = (ROOT / "prompts" / "secretary-instructions.md").read_text(encoding="utf-8").strip()
+    instructions = "# AI秘書への共通指示\n\n" + code_block(ROOT / "prompts" / "secretary-instructions.md")
     # The combined prompt includes the context already, so avoid an unnecessary
     # initial question before performing the beginner's first practice exercise.
     practice = instructions + "\n\n次の架空の予定で練習します。提供済みの条件で整理し、不足は最後に示してください。\n\n" + code_block(ROOT / "examples" / "first-day.md")
@@ -35,6 +35,12 @@ def main() -> None:
         tasks.append({"id": task_id, "label": label, "prompt": instructions + "\n\n" + code_block(ROOT / "prompts" / filename)})
     data = {
         "instructions": instructions,
+        "onboarding": instructions + "\n\n" + code_block(ROOT / "prompts" / "get-started.md"),
+        "starterReplies": [
+            {"id": "help", "label": "質問がむずかしい", "text": "何を入力すればよいかわかりません。一度に一つだけ、短い例か選択肢を出してください。"},
+            {"id": "unsure", "label": "わからない", "text": "わかりません。今ある情報でできるところから、一つずつ進めてください。"},
+            {"id": "done", "label": "終わった", "text": "今の作業が終わりました。残っている用事から、次の一つを一緒に決めてください。"},
+        ],
         "practice": practice,
         "correction": "元の入力と回答を照合してください。入力にない締切・担当・約束は追加せず、不明として整理し直してください。今日の締切と不在中の締切、固定予定、未担当の仕事をもう一度確認してください。",
         "tasks": tasks,
