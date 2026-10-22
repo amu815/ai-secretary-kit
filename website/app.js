@@ -1,6 +1,20 @@
 'use strict';
 
 (() => {
+  // Keep a manual path as the default. Only a user-activated desktop link
+  // attempts to open the installed app; no timer or web-chat fallback runs.
+  const userAgent = navigator.userAgent || '';
+  const isTabletMac = /Macintosh/i.test(userAgent) && navigator.maxTouchPoints > 1;
+  const isMobile = /Android|iPhone|iPad|iPod|Mobile|Tablet/i.test(userAgent)
+    || isTabletMac || navigator.userAgentData?.mobile === true;
+  const isDesktop = !isMobile && /Macintosh|Windows NT|Linux|X11/i.test(userAgent);
+  if (isDesktop) {
+    document.querySelectorAll('[data-open-app]').forEach(link => {
+      link.setAttribute('href', 'codex://threads/new');
+      link.querySelector('[data-app-label]').textContent = 'ChatGPTアプリを開く';
+    });
+  }
+
   const prompts = { practice: '', correction: '', tasks: [] };
   const fields = {
     practice: document.getElementById('practice-prompt'),
@@ -84,10 +98,10 @@
         if (!navigator.clipboard || !window.isSecureContext) throw new Error('Clipboard unavailable');
         await navigator.clipboard.writeText(text);
         status.textContent = kind === 'correction'
-          ? 'コピーしました。練習したのと同じChatGPTのチャットに貼り付けて、送信してください。'
+          ? 'コピーしました。ChatGPTアプリで、練習したのと同じチャットに貼り付けて送信してください。'
           : kind === 'task'
-            ? 'コピーしました。ChatGPTに貼り付けて、空欄を埋めてから送信してください。'
-            : 'コピーしました。次にChatGPTを開き、新しいチャットに貼り付けて送信してください。';
+            ? 'コピーしました。ChatGPTアプリに貼り付けて、空欄を埋めてから送信してください。'
+            : 'コピーしました。次にChatGPTアプリを開き、新しいチャットに貼り付けて送信してください。';
       } catch (_) {
         manualCopy(kind, status);
       } finally {

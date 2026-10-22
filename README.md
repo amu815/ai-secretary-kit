@@ -2,11 +2,13 @@
 
 仕事・学業・家庭の用事を「集める → 順番を決める → 進める → 確認する」ための日本語スターターキットです。優先順位、メールの読み落とし、自然な日本語、引き継ぎを、繰り返し使える手順にします。
 
-**最初はプログラミング不要。** ChatGPTに指示文と架空のサンプルを貼り付けるだけで試せます。メールの自動送信や、実際の受信箱との接続は行いません。
+**最初はプログラミング不要。** ChatGPTアプリに指示文と架空のサンプルを貼り付けるだけで試せます。メールの自動送信や、実際の受信箱との接続は行いません。
 
 ## まず使う
 
-**[Webガイド「はじめてのAI秘書」を開く](https://ai-secretary-kit-amu815.easytoast2050.chatgpt.site)** → 練習用の文をボタンでコピー → ChatGPTへ貼り付けます。GitHubの登録や操作は不要です。場面別の文と、送信前チェックもそのまま使えます。
+**[Webガイド「はじめてのAI秘書」を開く](https://ai-secretary-kit-amu815.easytoast2050.chatgpt.site)** → 練習用の文をボタンでコピー → ChatGPTアプリの新しいチャットへ貼り付けて送信します。GitHubの登録・操作や、サイト教材のインストールは不要です。ChatGPTアプリの導入とログインは必要です。[PCアプリの公式導入手順](https://learn.chatgpt.com/docs/quickstart?setup=app)
+
+PCではWebガイドの「ChatGPTアプリを開く」から起動を試せます。スマホ、またはボタンで開かない場合は、ChatGPTのアプリアイコンから開いてください。場面別の文と、送信前チェックもそのまま使えます。
 
 文章で読みたい方は、[3ステップのはじめ方](docs/quickstart.md)からも練習できます。指示文・架空の予定・回答の確認方法を一つのページにまとめています。初回にProjectsやskillsを設定する必要はありません。
 
@@ -29,11 +31,11 @@
 
 | 方法 | 向いている人 | 手順 |
 | --- | --- | --- |
-| ChatGPTにコピー＆ペースト | 最初に試したい人 | [Webガイド](https://ai-secretary-kit-amu815.easytoast2050.chatgpt.site)・[文章の手順](docs/quickstart.md) |
+| ChatGPTアプリにコピー＆ペースト | 最初に試したい人 | [Webガイド](https://ai-secretary-kit-amu815.easytoast2050.chatgpt.site)・[文章の手順](docs/quickstart.md) |
 | Codexなどにskillsを追加 | 手順を繰り返し呼び出したい人 | [skillsの導入](docs/install-skills.md) |
 | ローカルの送信前確認ツール | コマンド操作ができる人 | [review gate](docs/review-gate.md) |
 
-最初の練習は、利用できるChatGPT環境から試せます。継続利用ではChatGPT Plusを導入候補にします。課金前に[現行の料金と利用条件](https://learn.chatgpt.com/docs/pricing)を確認してください。APIキーはこのキットに不要です。
+最初の練習は、ChatGPTアプリで利用できるプランから試せます。継続利用ではChatGPT Plusを導入候補にします。課金前に[現行の料金と利用条件](https://learn.chatgpt.com/docs/pricing)を確認してください。APIキーはこのキットに不要です。
 
 ## 内容
 

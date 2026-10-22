@@ -8,7 +8,11 @@
 | [Projects and chats](https://learn.chatgpt.com/docs/projects) | 会話・資料・プロジェクト指示の整理 |
 | [Build skills](https://learn.chatgpt.com/docs/build-skills) | 単独skillの対応環境、SKILL.md、探索先、skill-installer |
 | [Skills & Plugins](https://learn.chatgpt.com/docs/skills-and-plugins) | skillとpluginの違い、呼び出し方 |
+| [Quickstart / Desktop app](https://learn.chatgpt.com/docs/quickstart?setup=app) | デスクトップアプリの導入・ログイン、新しいチャットでのChat選択 |
+| [Commands / Deep links](https://learn.chatgpt.com/docs/reference/commands#deep-links) | デスクトップアプリの `codex://` 互換性、`codex://threads/new`、任意のクエリパラメータ |
 
 本キットの優先順位の付け方・チェック表・文例は、これらの公式機能を利用するために作成した運用案です。OpenAI公式が定める業務ルールではありません。
+
+アプリ起動リンクはデスクトップの公式仕様を参照しています。スマートフォンでの同一リンクの対応や、すべての端末・ブラウザでの起動成功は確認していません。スマホや起動しない場合にアイコンから開く案内、本文をURLへ含めないこと、ChatGPTブラウザ版へ自動転送しないことは、この教材の実装方針です。
 
 日本での最終請求額、組織ごとの許可設定は、この資料から確定できません。実際の契約・設定画面で確認してください。
