@@ -127,11 +127,11 @@
         if (!navigator.clipboard || !window.isSecureContext) throw new Error('Clipboard unavailable');
         await navigator.clipboard.writeText(text);
         if (kind === 'reply' || kind === 'correction') {
-          status.textContent = 'コピーしました。ChatGPTアプリで、今使っている同じチャットに貼り付けて送信してください。';
+          status.textContent = 'コピーしました。ChatGPTアプリで、今使っている同じ会話に貼り付けて送信してください。';
         } else if (kind === 'practice') {
-          status.textContent = 'コピーしました。ChatGPTアプリの新しいチャットへそのまま送信し、回答を下の3つのポイントで確かめてください。';
+          status.textContent = 'コピーしました。ChatGPTアプリのWorkで新しい会話へそのまま送信し、回答を下の3つのポイントで確かめてください。';
         } else {
-          status.textContent = 'コピーしました。ChatGPTアプリに貼り付けて、そのまま送信してください。AIの次の案内に、一つずつ答えれば大丈夫です。';
+          status.textContent = 'コピーしました。ChatGPTアプリのWorkで、6 Sol・Mediumを確認してからそのまま貼り付けて送信してください。AIの次の案内に、一つずつ答えれば大丈夫です。';
         }
       } catch (_) {
         manualCopy(kind, status);
@@ -194,7 +194,7 @@
   async function loadPrompts() {
     const loadStatus = document.getElementById('load-status');
     try {
-      const response = await fetch('./prompts.json?v=20261022-board');
+      const response = await fetch('./prompts.json?v=20261022-model');
       if (!response.ok) throw new Error('Prompt request failed');
       const data = await response.json();
       if (typeof data.onboarding !== 'string' || !data.onboarding.trim()

@@ -8,7 +8,9 @@
 | [Projects and chats](https://learn.chatgpt.com/docs/projects) | 会話・資料・プロジェクト指示の整理 |
 | [Build skills](https://learn.chatgpt.com/docs/build-skills) | 単独skillの対応環境、SKILL.md、探索先、skill-installer |
 | [Skills & Plugins](https://learn.chatgpt.com/docs/skills-and-plugins) | skillとpluginの違い、呼び出し方 |
-| [Quickstart / Desktop app](https://learn.chatgpt.com/docs/quickstart?setup=app) | デスクトップアプリの導入・ログイン、新しいチャットでのChat選択 |
+| [Quickstart / Desktop app](https://learn.chatgpt.com/docs/quickstart?setup=app) | デスクトップアプリの導入・ログイン、ChatGPTからWorkを選ぶ入口 |
+| [Models](https://learn.chatgpt.com/docs/models) | GPT-6 SolはWork/Codexで利用しChatにはないこと、入力欄下のモデル・推論設定、PowerとAdvanced、effortと利用条件の違い |
+| [Get started with ChatGPT Work](https://learn.chatgpt.com/docs/get-started-with-work) | Workの導入案内。モデル設定手順に使う[公式動画の入口画像](https://learn.chatgpt.com/images/codex/video-posters/chatgpt-work-select.webp)の出典 |
 | [Commands / Deep links](https://learn.chatgpt.com/docs/reference/commands#deep-links) | デスクトップアプリの `codex://` 互換性、`codex://threads/new`、任意のクエリパラメータ |
 | [Plugins](https://learn.chatgpt.com/docs/plugins) | プラグインの検索・追加・接続・削除、削除と接続先認証解除の違い |
 | [Build plugins](https://learn.chatgpt.com/docs/build-plugins) | Plugins／Appsの表示差、接続先サービスの確認 |
@@ -19,6 +21,10 @@
 | [Google：外部アプリのアクセスエラー](https://support.google.com/accounts/answer/16668185?hl=ja) | 組織管理者による制限など、認証時の問題 |
 
 本キットの優先順位の付け方・チェック表・文例は、これらの公式機能を利用するために作成した運用案です。OpenAI公式が定める業務ルールではありません。
+
+GPT-6 Sol・Mediumを勧めるのは、本キットで日々の計画を始めるための提案です。Mediumについて公式が説明する速度と深さのバランスを参考にしていますが、公式既定値や最適な結果を保証する設定とはしていません。この手順の対象はGPT-6 Solです。選べるモデル・effort・初期値は、プラン、アプリ、組織の設定、提供時期によって変わります。
+
+掲載する画像は、公式のWork導入動画で使われる入口画面です。個人のアプリから撮影した画像でも、GPT-6 Sol・Mediumの選択状態を写した画像でもありません。Modelsページのモデル選択UIは公式の操作見本であり、自分の設定を変更しません。画像は出典元の素材として扱い、本キットのMITライセンスの対象に含めません。
 
 アプリ起動リンクはデスクトップの公式仕様を参照しています。スマートフォンでの同一リンクの対応や、すべての端末・ブラウザでの起動成功は確認していません。スマホや起動しない場合にアイコンから開く案内、本文をURLへ含めないこと、ChatGPTブラウザ版へ自動転送しないことは、この教材の実装方針です。
 
