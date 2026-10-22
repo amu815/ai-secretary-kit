@@ -43,9 +43,7 @@ AIに入力していない依頼や予定は、AIには見えていません。�
 
 ただし、「課金すれば仕事の問題が解決する」という意味ではありません。仕事の量が多すぎる、期限が決まっていない、誰に相談すればよいかわからない、といった問題には、人による調整も必要です。
 
-そして、**ChatGPT Plusとdotsの利用資格は別**です。2026年10月22日に確認した公式案内では、dotsは対象のPro、Business Premium、Enterpriseへ段階展開されており、Plusは対象一覧にありません。dotsを使う目的で課金する方は、契約前に条件を確認してください。[公式のdots利用条件](https://learn.chatgpt.com/docs/dots#access)
-
-このキットの基本手順に、dotsやAPIキーは不要です。
+このキットの基本手順はChatGPTへのコピー＆ペーストで進められます。APIキーは不要です。
 
 ## 2. 「自分のAI秘書」を作る
 
@@ -159,11 +157,7 @@ python3 tools/review_gate.py inspect examples/mail-draft.json
 
 ただし、人が本当に読んだことを証明する機能ではありません。添付の中身や文章の正しさも自動判定しません。メールソフトの送信ボタンを止める機能もないため、確認操作をAIに丸投げしないことが前提です。
 
-## 7. dotsとskillsを使う場合
-
-dotsを利用できる場合は、共通指示を渡し、日々の整理を担当してもらう方法があります。初回は接続を後回しにして練習できます。[公式のセットアップ](https://learn.chatgpt.com/docs/dots/getting-started)
-
-メール送信などを本人が行う運用なら、Custom rulesで対象操作を **Hand off to you** にします。ただし、Custom rulesにも誤りの可能性があり、アプリの権限とは別に管理されます。詳しい手順は[キットのdots設定](https://github.com/amu815/ai-secretary-kit/blob/main/docs/dots-setup.md)にまとめました。[公式のControls](https://learn.chatgpt.com/docs/dots/controls)
+## 7. skillsで手順を繰り返し使う
 
 対応するCodex環境では、4つのskillsを導入できます。
 
@@ -174,7 +168,9 @@ task-triage、inbox-to-actions、japanese-business-writing、handoff-check
 を導入してください。同名の既存skillがあれば差分を示してください。
 ```
 
-単独skillは対応するデスクトップ・CLI・IDE環境向けです。通常のChatGPT WebにSKILL.mdを添付することと、正式にskillをインストールすることは別です。dotsでローカルskillを使う場合はPC接続も必要です。[公式のskills案内](https://learn.chatgpt.com/docs/build-skills)、[dotsのPC接続](https://learn.chatgpt.com/docs/dots/computers-and-apps)
+単独skillは対応するデスクトップ・CLI・IDE環境向けです。通常のChatGPT WebにSKILL.mdを添付することと、正式にskillをインストールすることは別です。[公式のskills案内](https://learn.chatgpt.com/docs/build-skills)
+
+導入方法と動作確認は[キットのskills手順](https://github.com/amu815/ai-secretary-kit/blob/main/docs/install-skills.md)を参照してください。通常のChatGPTで始める場合は、共通指示と場面別プロンプトを使えば構いません。
 
 ## 8. チームで使うときに決めておくこと
 

@@ -31,11 +31,10 @@ GitHubを使い慣れていない方は、上のリンクを開いて本文を�
 | 方法 | 向いている人 | 手順 |
 | --- | --- | --- |
 | ChatGPTにコピー＆ペースト | 最初に試したい人 | [クイックスタート](docs/quickstart.md) |
-| dotsに日々の整理を依頼 | 利用資格と画面上のアクセスがある人 | [dotsの設定](docs/dots-setup.md) |
 | Codexなどにskillsを追加 | 手順を繰り返し呼び出したい人 | [skillsの導入](docs/install-skills.md) |
 | ローカルの送信前確認ツール | コマンド操作ができる人 | [review gate](docs/review-gate.md) |
 
-ChatGPT Plusを使った導入を基本にしています。ただし、**Plus契約だけでdotsが使えるわけではありません**。2026-10-22に確認した公式案内では、dotsは対象のPro・Business Premium・Enterpriseで段階展開中です。課金前に[現行の料金](https://learn.chatgpt.com/docs/pricing)と[dotsの利用条件](https://learn.chatgpt.com/docs/dots#access)を確認してください。APIキーはこのキットに不要です。
+ChatGPT Plusを使った導入を基本にしています。課金前に[現行の料金と利用条件](https://learn.chatgpt.com/docs/pricing)を確認してください。APIキーはこのキットに不要です。
 
 ## 内容
 
